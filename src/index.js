@@ -40,14 +40,6 @@ const router = new VueRouter({
   routes
 });
 
-mediator.subscribe("uppercaser", function (arg) {
-  console.log("mediator hook " + arg);
-});
-
-let var1 = "xcxxcxc";
-mediator.publish("uppercaser", var1);
-
-
 // 
 // ======================================================/
 new Vue({

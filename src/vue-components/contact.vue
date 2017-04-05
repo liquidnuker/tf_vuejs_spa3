@@ -12,7 +12,9 @@
   </div>
 </template>
 <script>
-  import {jsonLoader} from "../jsonloader.js";
+  import {mediator} from "../mediator.js";
+  import "../jsonloader.js";
+  
   export default {
     data () {
       return {
@@ -43,8 +45,9 @@
         
         // send to outside store to fetch data
         this.msg = "urlString: " + urlString; 
-        jsonLoader.url = urlString;
-        console.log("jsonloader: " + jsonLoader.url);       
+        // jsonLoader.url = urlString;
+        // console.log("jsonloader: " + jsonLoader.url);  
+        mediator.publish("jsonLoader", urlString);     
       }
     }
   }

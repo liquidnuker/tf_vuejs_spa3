@@ -9621,7 +9621,8 @@ module.exports = g;
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__jsonloader_js__ = __webpack_require__(18);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__mediator_js__ = __webpack_require__(2);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__jsonloader_js__ = __webpack_require__(18);
 //
 //
 //
@@ -9635,6 +9636,8 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
+
+
 
 
 /* harmony default export */ __webpack_exports__["default"] = {
@@ -9667,8 +9670,9 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 
       // send to outside store to fetch data
       this.msg = "urlString: " + urlString;
-      __WEBPACK_IMPORTED_MODULE_0__jsonloader_js__["a" /* jsonLoader */].url = urlString;
-      console.log("jsonloader: " + __WEBPACK_IMPORTED_MODULE_0__jsonloader_js__["a" /* jsonLoader */].url);
+      // jsonLoader.url = urlString;
+      // console.log("jsonloader: " + jsonLoader.url);  
+      __WEBPACK_IMPORTED_MODULE_0__mediator_js__["a" /* mediator */].publish("jsonLoader", urlString);
     }
   }
 };
@@ -9794,13 +9798,17 @@ var __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;!function (a, b)
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return jsonLoader; });
-var jsonLoader = {
-  url: ""
-};
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__mediator_js__ = __webpack_require__(2);
+
+
+// const jsonLoader = {
+//   url: ""
+// };
 // send to main store when json is fetched
 
-
+__WEBPACK_IMPORTED_MODULE_0__mediator_js__["a" /* mediator */].subscribe("jsonLoader", function (arg) {
+  console.log("mediator jsonloader url: " + arg);
+});
 
 /***/ }),
 /* 19 */
@@ -10054,13 +10062,6 @@ var routes = [{
 var router = new __WEBPACK_IMPORTED_MODULE_2_vue_router__["a" /* default */]({
   routes: routes
 });
-
-__WEBPACK_IMPORTED_MODULE_11__mediator_js__["a" /* mediator */].subscribe("uppercaser", function (arg) {
-  console.log("mediator hook " + arg);
-});
-
-var var1 = "xcxxcxc";
-__WEBPACK_IMPORTED_MODULE_11__mediator_js__["a" /* mediator */].publish("uppercaser", var1);
 
 // 
 // ======================================================/
