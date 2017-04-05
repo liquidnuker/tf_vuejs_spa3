@@ -6,6 +6,7 @@
     <p>params id: {{$route.params.id}}</p>
 
     <p>{{ msg }}</p>
+    <p>store state: {{ msg2 }}</p>
     <br>
     <br>
     <p>computed: {{ gr }}</p>
@@ -14,16 +15,19 @@
 <script>
   import {mediator} from "../mediator.js";
   import "../jsonloader.js";
+  import {store} from "../store.js";
 
   export default {
     data () {
       return {
-        msg: ''
+        msg: '',
+        msg2: store.state
       }
     },
     computed: {
       gr: function () {
         this.prepare(this.$route.params.id);
+        this.msg2 = store.state;
         return this.$route.params.id;
       }
     },
