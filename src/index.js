@@ -13,6 +13,8 @@ import vcPageContact from './vue-components/contact.vue';
 import global404 from './vue-components/global404.vue';
 import subroute404 from './vue-components/subroute404.vue';
 
+import {mediator} from "./mediator.js";
+
 // 
 // ======================================================/
 Vue.use(VueRouter)
@@ -37,6 +39,14 @@ const routes = [{
 const router = new VueRouter({
   routes
 });
+
+mediator.subscribe("uppercaser", function (arg) {
+  console.log("mediator hook " + arg);
+});
+
+let var1 = "xcxxcxc";
+mediator.publish("uppercaser", var1);
+
 
 // 
 // ======================================================/
