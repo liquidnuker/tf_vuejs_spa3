@@ -121,34 +121,6 @@ module.exports = function normalizeComponent (
 
 /***/ }),
 /* 1 */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__store_js__ = __webpack_require__(18);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return mediator; });
-
-
-var Mediator = __webpack_require__(17);
-var mediator = new Mediator();
-
-// store state setter
-// ======================================================/
-mediator.subscribe("store", function (arg) {
-  __WEBPACK_IMPORTED_MODULE_0__store_js__["a" /* store */].state = arg;
-  console.log("store state: " + __WEBPACK_IMPORTED_MODULE_0__store_js__["a" /* store */].state);
-});
-
-// jsonloader
-// ======================================================/
-mediator.subscribe("jsonLoader", function (arg) {
-  console.log("mediator jsonloader url: " + arg);
-  mediator.publish("store", arg);
-});
-
-
-
-/***/ }),
-/* 2 */
 /***/ (function(module, exports) {
 
 // shim for using process in browser
@@ -331,6 +303,18 @@ process.chdir = function (dir) {
     throw new Error('process.chdir is not supported');
 };
 process.umask = function() { return 0; };
+
+
+/***/ }),
+/* 2 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return store; });
+var store = {
+  state: ''
+};
+
 
 
 /***/ }),
@@ -2894,7 +2878,7 @@ if (inBrowser && window.Vue) {
 
 /* harmony default export */ __webpack_exports__["a"] = VueRouter;
 
-/* WEBPACK VAR INJECTION */}.call(__webpack_exports__, __webpack_require__(2)))
+/* WEBPACK VAR INJECTION */}.call(__webpack_exports__, __webpack_require__(1)))
 
 /***/ }),
 /* 13 */
@@ -9603,7 +9587,7 @@ setTimeout(function () {
 
 /* harmony default export */ __webpack_exports__["a"] = Vue$2;
 
-/* WEBPACK VAR INJECTION */}.call(__webpack_exports__, __webpack_require__(2), __webpack_require__(14)))
+/* WEBPACK VAR INJECTION */}.call(__webpack_exports__, __webpack_require__(1), __webpack_require__(14)))
 
 /***/ }),
 /* 14 */
@@ -9638,8 +9622,8 @@ module.exports = g;
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__mediator_js__ = __webpack_require__(1);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__store_js__ = __webpack_require__(18);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__mediator_js__ = __webpack_require__(18);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__store_js__ = __webpack_require__(2);
 //
 //
 //
@@ -9817,10 +9801,26 @@ var __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;!function (a, b)
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return store; });
-var store = {
-  state: ''
-};
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__store_js__ = __webpack_require__(2);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return mediator; });
+
+
+var Mediator = __webpack_require__(17);
+var mediator = new Mediator();
+
+// store state setter
+// ======================================================/
+mediator.subscribe("store", function (arg) {
+  __WEBPACK_IMPORTED_MODULE_0__store_js__["a" /* store */].state = arg;
+  console.log("store state: " + __WEBPACK_IMPORTED_MODULE_0__store_js__["a" /* store */].state);
+});
+
+// jsonloader
+// ======================================================/
+mediator.subscribe("jsonLoader", function (arg) {
+  console.log("mediator jsonloader url: " + arg);
+  mediator.publish("store", arg);
+});
 
 
 
@@ -10034,9 +10034,6 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__vue_components_global404_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_9__vue_components_global404_vue__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__vue_components_subroute404_vue__ = __webpack_require__(11);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__vue_components_subroute404_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_10__vue_components_subroute404_vue__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_11__mediator_js__ = __webpack_require__(1);
-
-
 
 
 

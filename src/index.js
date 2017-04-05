@@ -13,8 +13,6 @@ import vcPageContact from './vue-components/contact.vue';
 import global404 from './vue-components/global404.vue';
 import subroute404 from './vue-components/subroute404.vue';
 
-import {mediator} from "./mediator.js";
-
 // 
 // ======================================================/
 Vue.use(VueRouter)
