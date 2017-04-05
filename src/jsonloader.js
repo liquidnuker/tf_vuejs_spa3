@@ -1,5 +1,5 @@
 import {mediator} from "./mediator.js";
-import {store} from "./store.js";
+// import {store} from "./store.js";
 
 // const jsonLoader = {
 //   url: ""
