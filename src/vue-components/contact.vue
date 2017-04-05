@@ -14,7 +14,7 @@
 <script>
   import {mediator} from "../mediator.js";
   import "../jsonloader.js";
-  
+
   export default {
     data () {
       return {
@@ -46,7 +46,7 @@
         // send to outside store to fetch data
         this.msg = "urlString: " + urlString; 
         // jsonLoader.url = urlString;
-        // console.log("jsonloader: " + jsonLoader.url);  
+        console.log(urlString);  
         mediator.publish("jsonLoader", urlString);     
       }
     }

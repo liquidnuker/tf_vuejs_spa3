@@ -1,4 +1,5 @@
 import {mediator} from "./mediator.js";
+import {store} from "./store.js";
 
 // const jsonLoader = {
 //   url: ""
@@ -7,4 +8,5 @@ import {mediator} from "./mediator.js";
 
 mediator.subscribe("jsonLoader", function (arg) {
   console.log("mediator jsonloader url: " + arg);
+  mediator.publish("store", arg);  
 });
