@@ -1,14 +1,17 @@
 <template>
   <div id="vc-page-bonsai" class="vc-page-bonsai">
     <p>vc-page-bonsai</p>
-    <p>status</p>
+    <p>{{ status }}</p>
     <p>params: {{$route.params}}</p>
+  <button v-on:click="customUrl">custom url</button>
   </div>
+
 </template>
 
 <script>
 import {mediator} from "../mediator.js";
 import {store} from "../store.js";
+import {router} from "../index.js";
 
 export default {
   data() {
@@ -38,7 +41,10 @@ export default {
       } else {
         console.log("load species then id");
       }
-    } // end loadcheck 
+    }, // end loadcheck 
+    customUrl: function() {
+      router.push('/bonsai/:87956876/:ofgfjgfgh')
+    }
   }
 }  
 </script>

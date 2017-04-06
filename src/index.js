@@ -55,3 +55,5 @@ new Vue({
   router,
   render: h => h(vcRouterLinks)
 })
+
+export {router}
