@@ -27,8 +27,8 @@ const routes = [{
   path: '/bonsai/:species',
   component: vcPageBonsai
 }, {
-  path: '/contact/*',
-  component: subroute404
+  path: '/bonsai/:species/:id',
+  component: vcPageBonsai
 }, {
   path: '*',
   component: global404

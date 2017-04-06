@@ -9808,12 +9808,16 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
+//
+//
+//
+//
 
 /* harmony default export */ __webpack_exports__["default"] = {
   data: function data() {
     return {
       species: 'species1',
-      msg2: 'user-msg2'
+      id: 'id1'
     };
   },
 
@@ -9868,7 +9872,11 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
     attrs: {
       "to": '/bonsai/:' + _vm.species
     }
-  }, [_vm._v(_vm._s(_vm.species))])], 1), _vm._v(" "), _c('router-view', {
+  }, [_vm._v(_vm._s(_vm.species))]), _vm._v(" "), _c('router-link', {
+    attrs: {
+      "to": '/bonsai/:' + _vm.species + '/:' + _vm.id
+    }
+  }, [_vm._v("speciesid")])], 1), _vm._v(" "), _c('router-view', {
     staticClass: "router-view"
   })], 1)
 },staticRenderFns: []}
@@ -10061,8 +10069,8 @@ var routes = [{
   path: '/bonsai/:species',
   component: __WEBPACK_IMPORTED_MODULE_7__vue_components_bonsai_vue___default.a
 }, {
-  path: '/contact/*',
-  component: __WEBPACK_IMPORTED_MODULE_10__vue_components_subroute404_vue___default.a
+  path: '/bonsai/:species/:id',
+  component: __WEBPACK_IMPORTED_MODULE_7__vue_components_bonsai_vue___default.a
 }, {
   path: '*',
   component: __WEBPACK_IMPORTED_MODULE_9__vue_components_global404_vue___default.a
