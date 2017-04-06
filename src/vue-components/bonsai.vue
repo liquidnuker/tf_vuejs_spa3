@@ -33,10 +33,12 @@ export default {
     loadCheck: function () {
       if (!this.$route.params.species) {
         console.log("no species: " + !this.$route.params.species + " load all");
+      } else if (!this.$route.params.id) {
+        console.log("no id. just load species");
       } else {
-        console.log("species: " + this.$route.params.species);
+        console.log("load species then id");
       }
-    }
+    } // end loadcheck 
   }
 }  
 </script>

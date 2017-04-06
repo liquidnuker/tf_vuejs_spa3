@@ -17,8 +17,8 @@
 export default {
   data () {
     return {
-      species: 'species1',
-      id: 'id1'
+      species: 'species2',
+      id: 'id2'
     }
   },
   computed: {
