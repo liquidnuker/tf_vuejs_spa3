@@ -10149,6 +10149,8 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
     loadCheck: function loadCheck() {
       if (!this.$route.params.species) {
         console.log("no species: " + !this.$route.params.species + " load all");
+      } else {
+        console.log("species: " + this.$route.params.species);
       }
     }
   }

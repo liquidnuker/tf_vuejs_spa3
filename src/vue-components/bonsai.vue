@@ -33,6 +33,8 @@ export default {
     loadCheck: function () {
       if (!this.$route.params.species) {
         console.log("no species: " + !this.$route.params.species + " load all");
+      } else {
+        console.log("species: " + this.$route.params.species);
       }
     }
   }
