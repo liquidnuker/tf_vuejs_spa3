@@ -27,10 +27,13 @@ export default {
   },
   updated: function () {
     console.log("updated");
+    this.loadCheck();
   },
   methods: {
     loadCheck: function () {
-      console.log(this.$route.params.species === undefined);
+      if (!this.$route.params.species) {
+        console.log("no species: " + !this.$route.params.species + " load all");
+      }
     }
   }
 }  

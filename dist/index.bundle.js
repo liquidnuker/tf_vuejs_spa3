@@ -10143,10 +10143,13 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
   },
   updated: function updated() {
     console.log("updated");
+    this.loadCheck();
   },
   methods: {
     loadCheck: function loadCheck() {
-      console.log(this.$route.params.species === undefined);
+      if (!this.$route.params.species) {
+        console.log("no species: " + !this.$route.params.species + " load all");
+      }
     }
   }
 };
