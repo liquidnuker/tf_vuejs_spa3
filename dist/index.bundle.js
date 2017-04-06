@@ -9920,7 +9920,7 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
     attrs: {
       "id": "vc-page-bonsai"
     }
-  }, [_c('p', [_vm._v("vc-page-bonsai")]), _vm._v(" "), _c('p', [_vm._v("show all")]), _vm._v(" "), _c('p', [_vm._v("params: " + _vm._s(_vm.$route.params))])])
+  }, [_c('p', [_vm._v("vc-page-bonsai")]), _vm._v(" "), _c('p', [_vm._v("status")]), _vm._v(" "), _c('p', [_vm._v("params: " + _vm._s(_vm.$route.params))])])
 },staticRenderFns: []}
 module.exports.render._withStripped = true
 if (false) {
@@ -10127,7 +10127,9 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 
 /* harmony default export */ __webpack_exports__["default"] = {
   data: function data() {
-    return {};
+    return {
+      status: ''
+    };
   },
 
   computed: {},
@@ -10137,6 +10139,9 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
   },
   created: function created() {
     console.log("created");
+
+    // no species. load all
+    console.log(this.$route.params.species === undefined);
   },
   methods: {
     prepare: function prepare(url) {

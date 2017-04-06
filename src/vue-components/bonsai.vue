@@ -1,7 +1,7 @@
 <template>
   <div id="vc-page-bonsai" class="vc-page-bonsai">
     <p>vc-page-bonsai</p>
-    <p>show all</p>
+    <p>status</p>
     <p>params: {{$route.params}}</p>
   </div>
 </template>
@@ -13,7 +13,7 @@
   export default {
     data () {
       return {
-        
+        status: ''
       }
     },
     computed: {
@@ -24,6 +24,9 @@
     },
     created: function () {
       console.log("created");
+
+      // no species. load all
+      console.log(this.$route.params.species === undefined);
     },
     methods: {
       prepare: function(url) {
