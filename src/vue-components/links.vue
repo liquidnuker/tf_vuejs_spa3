@@ -2,7 +2,7 @@
 <div id="vc-router-links" class="vc-router-links">
   <div class="menubar">
     <router-link to="/">Home</router-link>
-    <router-link to="/about">About</router-link>
+    <router-link to="/bonsai">bonsai</router-link>
     <router-link v-bind:to="'/contact/:' + msg +'user/:'+  msg2">{{ msg }}</router-link>
     
   </div>
