@@ -9812,7 +9812,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony default export */ __webpack_exports__["default"] = {
   data: function data() {
     return {
-      msg: 'id-msg',
+      species: 'species1',
       msg2: 'user-msg2'
     };
   },
@@ -9866,9 +9866,9 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
     }
   }, [_vm._v("bonsai")]), _vm._v(" "), _c('router-link', {
     attrs: {
-      "to": '/contact/:' + _vm.msg + 'user/:' + _vm.msg2
+      "to": '/bonsai/:' + _vm.species
     }
-  }, [_vm._v(_vm._s(_vm.msg))])], 1), _vm._v(" "), _c('router-view', {
+  }, [_vm._v(_vm._s(_vm.species))])], 1), _vm._v(" "), _c('router-view', {
     staticClass: "router-view"
   })], 1)
 },staticRenderFns: []}
@@ -9907,15 +9907,13 @@ if (false) {
 /***/ (function(module, exports, __webpack_require__) {
 
 module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
-  return _vm._m(0)
-},staticRenderFns: [function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
   return _c('div', {
     staticClass: "vc-page-bonsai",
     attrs: {
       "id": "vc-page-bonsai"
     }
-  }, [_c('p', [_vm._v("vc-page-bonsai")]), _vm._v(" "), _c('p', [_vm._v("show all")])])
-}]}
+  }, [_c('p', [_vm._v("vc-page-bonsai")]), _vm._v(" "), _c('p', [_vm._v("show all")]), _vm._v(" "), _c('p', [_vm._v("params: " + _vm._s(_vm.$route.params))])])
+},staticRenderFns: []}
 module.exports.render._withStripped = true
 if (false) {
   module.hot.accept()
@@ -10060,8 +10058,8 @@ var routes = [{
   path: '/bonsai',
   component: __WEBPACK_IMPORTED_MODULE_7__vue_components_bonsai_vue___default.a
 }, {
-  path: '/contact/:type/:id',
-  component: __WEBPACK_IMPORTED_MODULE_8__vue_components_contact_vue___default.a
+  path: '/bonsai/:species',
+  component: __WEBPACK_IMPORTED_MODULE_7__vue_components_bonsai_vue___default.a
 }, {
   path: '/contact/*',
   component: __WEBPACK_IMPORTED_MODULE_10__vue_components_subroute404_vue___default.a
