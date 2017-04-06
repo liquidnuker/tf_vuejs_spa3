@@ -329,7 +329,7 @@ var store = {
 
 var Component = __webpack_require__(0)(
   /* script */
-  null,
+  __webpack_require__(29),
   /* template */
   __webpack_require__(22),
   /* scopeId */
@@ -10103,6 +10103,57 @@ new __WEBPACK_IMPORTED_MODULE_1_vue__["a" /* default */]({
     return h(__WEBPACK_IMPORTED_MODULE_5__vue_components_links_vue___default.a);
   }
 });
+
+/***/ }),
+/* 28 */,
+/* 29 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__mediator_js__ = __webpack_require__(16);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__store_js__ = __webpack_require__(2);
+//
+//
+//
+//
+//
+//
+//
+//
+
+
+
+
+/* harmony default export */ __webpack_exports__["default"] = {
+  data: function data() {
+    return {};
+  },
+
+  computed: {},
+  beforeCreate: function beforeCreate() {
+    // todo: insert loading v-if
+    console.log("beforeCreate");
+  },
+  created: function created() {
+    console.log("created");
+  },
+  methods: {
+    prepare: function prepare(url) {
+      // convert to array to remove the " : "
+      // let urlArray = url.split("");
+      // urlArray.splice(0, 1);
+
+      // convert back to str
+      // let urlString = urlArray.join("");
+
+      // send to outside store to fetch data
+      // this.msg = "urlString: " + urlString; 
+      // jsonLoader.url = urlString;
+      // mediator.publish("jsonLoader", urlString);     
+    }
+  }
+};
 
 /***/ })
 /******/ ]);
