@@ -17,6 +17,9 @@
       }
     },
     computed: {
+      loadcheck: function() {
+        
+      }
     },
     beforeCreate: function () {
       // todo: insert loading v-if
@@ -24,8 +27,10 @@
     },
     created: function () {
       console.log("created");
-
-      // no species. load all
+      console.log(this.$route.params.species === undefined);
+    },
+    updated: function() {
+      console.log("updated");
       console.log(this.$route.params.species === undefined);
     },
     methods: {

@@ -10132,15 +10132,19 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
     };
   },
 
-  computed: {},
+  computed: {
+    loadcheck: function loadcheck() {}
+  },
   beforeCreate: function beforeCreate() {
     // todo: insert loading v-if
     console.log("beforeCreate");
   },
   created: function created() {
     console.log("created");
-
-    // no species. load all
+    console.log(this.$route.params.species === undefined);
+  },
+  updated: function updated() {
+    console.log("updated");
     console.log(this.$route.params.species === undefined);
   },
   methods: {
