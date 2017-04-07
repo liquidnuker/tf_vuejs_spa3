@@ -1,5 +1,6 @@
 const store = {
-  state: ''
+  state: '',
+  category: ''
 };
 
 export {store}

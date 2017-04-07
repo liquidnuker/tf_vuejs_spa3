@@ -14,6 +14,7 @@ mediator.subscribe("store", function (arg) {
 // ======================================================/
 mediator.subscribe("jsonLoader", function (arg) {
   console.log("mediator jsonloader url: " + arg);
+  // inject to store after loading
   mediator.publish("store", arg);  
 });
 
