@@ -13,10 +13,12 @@ mediator.subscribe("store", function (arg) {
 // jsonloader
 // ======================================================/
 mediator.subscribe("jsonLoader", function (arg) {
+  const jsonUrl = "./js/ajax/bonsai.json";
+
   console.log("mediator jsonloader url: " + arg);
   // inject to store after loading
   mediator.publish("store", arg);  
 });
 
-export {mediator}
+export {mediator};
 
