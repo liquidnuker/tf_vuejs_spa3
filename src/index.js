@@ -7,31 +7,29 @@ import vcHeader from "./vue-components/header.vue";
 import vcFooter from "./vue-components/footer.vue";
 
 import vcRouterLinks from "./vue-components/links.vue";
-import vcPageHome from './vue-components/home.vue';
-import vcPageBonsai from './vue-components/bonsai.vue';
-import vcPageContact from './vue-components/contact.vue';
-import global404 from './vue-components/global404.vue';
-import subroute404 from './vue-components/subroute404.vue';
-
+import vcPageHome from "./vue-components/home.vue";
+import vcPageBonsai from "./vue-components/bonsai.vue";
+import global404 from "./vue-components/global404.vue";
+import subroute404 from "./vue-components/subroute404.vue";
 
 // 
 // ======================================================/
-Vue.use(VueRouter)
+Vue.use(VueRouter);
 
 const routes = [{
-  path: '/',
+  path: "/",
   component: vcPageHome
 }, {
-  path: '/bonsai',
+  path: "/bonsai",
   component: vcPageBonsai
 }, {
-  path: '/bonsai/:species',
+  path: "/bonsai/:species",
   component: vcPageBonsai
 }, {
-  path: '/bonsai/:species/:id',
+  path: "/bonsai/:species/:id",
   component: vcPageBonsai
 }, {
-  path: '*',
+  path: "*",
   component: global404
 }];
 
@@ -52,13 +50,9 @@ new Vue({
 });
 
 new Vue({
-  el: '#app',
+  el: "#app",
   router,
   render: h => h(vcRouterLinks)
-})
+});
 
-export {router}
-
-
-// 
-// ======================================================/
+export {router};
