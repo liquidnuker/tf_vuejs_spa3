@@ -13,6 +13,8 @@ import vcPageContact from './vue-components/contact.vue';
 import global404 from './vue-components/global404.vue';
 import subroute404 from './vue-components/subroute404.vue';
 
+import {jsonLoader} from './jsonloader.js';
+
 // 
 // ======================================================/
 Vue.use(VueRouter)
@@ -57,3 +59,17 @@ new Vue({
 })
 
 export {router}
+
+
+// 
+// ======================================================/
+const jsonUrl = "src/js/ajax/bonsai.json";
+
+jsonLoader.getJSON(jsonUrl).then(function (response) {
+  // store.state.message = response.bonsai;
+  // vmA.loading = false;
+  console.log(response.bonsai.length);
+}).then(function () {
+  // showPages();
+  console.log("paginator");
+});
