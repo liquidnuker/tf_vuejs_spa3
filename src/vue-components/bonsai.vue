@@ -16,49 +16,48 @@ import {jsonLoader} from '../js/jsonloader.js';
 
 export default {
   data() {
-    return {
-      status: ''
-    }
-  },
-  computed: {},
-  beforeCreate: function () {
-  // todo: insert loading v-if
-    console.log("beforeCreate");
-  },
-  created: function () {
-    console.log("created");
-    this.loadCheck();
-  },
-  updated: function () {
-    console.log("updated");
-    this.loadCheck();
-  },
-  methods: {
-    loadCheck: function () {
-      if (!this.$route.params.species) {
-        console.log("no species: " + !this.$route.params.species + " load all");
-
-        // load all
-        const jsonUrl = "./src/js/ajax/bonsai.json";
-jsonLoader.getJSON(jsonUrl).then(function (response) {
-  // store.state.message = response.bonsai;
-  // vmA.loading = false;
-  console.log(response.bonsai.length);
-}).then(function () {
-  // showPages();
-  console.log("paginator");
-});
-
-
-      } else if (!this.$route.params.id) {
-        console.log("no id. just load species");
-      } else {
-        console.log("load species then id");
+      return {
+        status: ''
       }
-    }, // end loadcheck 
-    customUrl: function() {
-      router.push('/bonsai/:87956876/:ofgfjgfgh')
+    },
+    computed: {},
+    beforeCreate: function () {
+      // todo: insert loading v-if
+      console.log("beforeCreate");
+    },
+    created: function () {
+      console.log("created");
+      this.loadCheck();
+    },
+    updated: function () {
+      console.log("updated");
+      this.loadCheck();
+    },
+    methods: {
+      loadCheck: function () {
+        if (!this.$route.params.species) {
+          console.log("no species: " + !this.$route.params.species + " load all");
+
+          // load all
+          const jsonUrl = "./src/js/ajax/bonsai.json";
+          jsonLoader.getJSON(jsonUrl).then(function (response) {
+            // store.state.message = response.bonsai;
+            // vmA.loading = false;
+            console.log(response.bonsai.length);
+          }).then(function () {
+            // showPages();
+            console.log("paginator");
+          });
+
+        } else if (!this.$route.params.id) {
+          console.log("no id. just load species");
+        } else {
+          console.log("load species then id");
+        }
+      }, // end loadcheck 
+      customUrl: function () {
+        router.push('/bonsai/:87956876/:ofgfjgfgh')
+      }
     }
-  }
-}  
+}
 </script>
