@@ -13,7 +13,7 @@ import vcPageContact from './vue-components/contact.vue';
 import global404 from './vue-components/global404.vue';
 import subroute404 from './vue-components/subroute404.vue';
 
-import {jsonLoader} from './jsonloader.js';
+import {jsonLoader} from './js/jsonloader.js';
 
 // 
 // ======================================================/
@@ -63,7 +63,7 @@ export {router}
 
 // 
 // ======================================================/
-const jsonUrl = "src/js/ajax/bonsai.json";
+const jsonUrl = "./src/js/ajax/bonsai.json";
 
 jsonLoader.getJSON(jsonUrl).then(function (response) {
   // store.state.message = response.bonsai;

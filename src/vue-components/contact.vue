@@ -13,8 +13,8 @@
   </div>
 </template>
 <script>
-  import {mediator} from "../mediator.js";
-  import {store} from "../store.js";
+  // import {mediator} from "../mediator.js";
+  // import {store} from "../store.js";
   
   export default {
     data () {

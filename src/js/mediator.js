@@ -1,6 +1,6 @@
 import {store} from "./store.js";
 
-const Mediator = require("./js/vendor/mediator.min.js");
+const Mediator = require("./vendor/mediator.min.js");
 const mediator = new Mediator();
 
 // store state setter

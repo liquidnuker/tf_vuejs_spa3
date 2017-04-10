@@ -9,8 +9,8 @@
 </template>
 
 <script>
-import {mediator} from "../mediator.js";
-import {store} from "../store.js";
+import {mediator} from "../js/mediator.js";
+import {store} from "../js/store.js";
 import {router} from "../index.js";
 
 export default {
