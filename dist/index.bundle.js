@@ -331,10 +331,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__vue_components_global404_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_9__vue_components_global404_vue__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__vue_components_subroute404_vue__ = __webpack_require__(12);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__vue_components_subroute404_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_10__vue_components_subroute404_vue__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_11__js_jsonloader_js__ = __webpack_require__(3);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "router", function() { return router; });
-
-
 
 
 
@@ -403,16 +400,6 @@ new __WEBPACK_IMPORTED_MODULE_1_vue__["a" /* default */]({
 
 // 
 // ======================================================/
-var jsonUrl = "./src/js/ajax/bonsai.json";
-
-__WEBPACK_IMPORTED_MODULE_11__js_jsonloader_js__["a" /* jsonLoader */].getJSON(jsonUrl).then(function (response) {
-  // store.state.message = response.bonsai;
-  // vmA.loading = false;
-  console.log(response.bonsai.length);
-}).then(function () {
-  // showPages();
-  console.log("paginator");
-});
 
 /***/ }),
 /* 3 */
@@ -9756,6 +9743,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__js_mediator_js__ = __webpack_require__(29);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__js_store_js__ = __webpack_require__(28);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__index_js__ = __webpack_require__(2);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__js_jsonloader_js__ = __webpack_require__(3);
 //
 //
 //
@@ -9766,6 +9754,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
+
 
 
 
@@ -9795,6 +9784,17 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
     loadCheck: function loadCheck() {
       if (!this.$route.params.species) {
         console.log("no species: " + !this.$route.params.species + " load all");
+
+        // load all
+        var jsonUrl = "./src/js/ajax/bonsai.json";
+        __WEBPACK_IMPORTED_MODULE_3__js_jsonloader_js__["a" /* jsonLoader */].getJSON(jsonUrl).then(function (response) {
+          // store.state.message = response.bonsai;
+          // vmA.loading = false;
+          console.log(response.bonsai.length);
+        }).then(function () {
+          // showPages();
+          console.log("paginator");
+        });
       } else if (!this.$route.params.id) {
         console.log("no id. just load species");
       } else {

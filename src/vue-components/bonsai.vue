@@ -12,6 +12,7 @@
 import {mediator} from "../js/mediator.js";
 import {store} from "../js/store.js";
 import {router} from "../index.js";
+import {jsonLoader} from '../js/jsonloader.js';
 
 export default {
   data() {
@@ -36,6 +37,19 @@ export default {
     loadCheck: function () {
       if (!this.$route.params.species) {
         console.log("no species: " + !this.$route.params.species + " load all");
+
+        // load all
+        const jsonUrl = "./src/js/ajax/bonsai.json";
+jsonLoader.getJSON(jsonUrl).then(function (response) {
+  // store.state.message = response.bonsai;
+  // vmA.loading = false;
+  console.log(response.bonsai.length);
+}).then(function () {
+  // showPages();
+  console.log("paginator");
+});
+
+
       } else if (!this.$route.params.id) {
         console.log("no id. just load species");
       } else {
