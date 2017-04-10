@@ -46,7 +46,7 @@ export default {
             console.log(response.bonsai.length);
           }).then(function () {
             // showPages();
-            console.log("paginator");
+            mediator.publish("single");
           });
 
         } else if (!this.$route.params.id) {
