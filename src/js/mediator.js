@@ -10,13 +10,6 @@ mediator.subscribe("store", function (arg) {
 
 });
 
-// jsonloader
-// ======================================================/
-mediator.subscribe("jsonLoader", function (arg) {
-
-});
-
-
 mediator.subscribe("loadAll", function () {
   const jsonUrl = "./src/js/ajax/bonsai.json";
   jsonLoader.getJSON(jsonUrl).then(function (response) {

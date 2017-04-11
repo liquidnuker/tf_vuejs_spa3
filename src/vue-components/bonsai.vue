@@ -1,7 +1,7 @@
 <template>
   <div id="vc-page-bonsai" class="vc-page-bonsai">
     <p>vc-page-bonsai</p>
-    <p>{{ status }}</p>
+    <p>{{ items }}</p>
     <p>params: {{$route.params}}</p>
   <button v-on:click="customUrl">custom url</button>
   </div>
@@ -16,7 +16,7 @@ import {router} from "../index.js";
 export default {
   data() {
       return {
-        status: ''
+        items: store.state
       }
     },
     computed: {},
