@@ -29,7 +29,7 @@ export default {
     },
     beforeCreate: function () {
       // todo: insert loading v-if
-      console.log("beforeCreate");
+      // console.log("beforeCreate");
     },
     created: function () {
       console.log("created");
