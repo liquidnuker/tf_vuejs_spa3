@@ -1,7 +1,10 @@
 <template>
   <div id="vc-page-bonsai" class="vc-page-bonsai">
     <p>vc-page-bonsai</p>
-    <p>{{ items }}</p>
+    <br>
+    <p>
+    {{ items }}
+    </p>
     <p>params: {{$route.params}}</p>
   <button v-on:click="customUrl">custom url</button>
   </div>
@@ -19,7 +22,11 @@ export default {
         items: store.state
       }
     },
-    computed: {},
+    computed: {
+      gr: function() {
+        this.items = store.state;
+      }
+    },
     beforeCreate: function () {
       // todo: insert loading v-if
       console.log("beforeCreate");
@@ -39,7 +46,7 @@ export default {
 
           // load all
           mediator.publish("loadAll");
-
+          
         } else if (!this.$route.params.id) {
           console.log("no id. just load species");
         } else {

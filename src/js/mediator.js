@@ -13,12 +13,12 @@ mediator.subscribe("store", function (arg) {
 mediator.subscribe("loadAll", function () {
   const jsonUrl = "./src/js/ajax/bonsai.json";
   jsonLoader.getJSON(jsonUrl).then(function (response) {
-    // store.state.message = response.bonsai;
+    store.state = response.bonsai;
     // vmA.loading = false;
     console.log(response.bonsai.length);
   }).then(function () {
     // showPages();
-    console.log("done");
+    // console.log(store.state);
   });
 });
 
