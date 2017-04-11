@@ -420,7 +420,7 @@ new __WEBPACK_IMPORTED_MODULE_1_vue__["a" /* default */]({
 
 var Component = __webpack_require__(0)(
   /* script */
-  __webpack_require__(18),
+  __webpack_require__(15),
   /* template */
   __webpack_require__(23),
   /* scopeId */
@@ -428,7 +428,7 @@ var Component = __webpack_require__(0)(
   /* cssModules */
   null
 )
-Component.options.__file = "D:\\WINDOWS\\GD2\\web\\testfiles\\webpack2\\_node_dev\\git_vuejs_spa3\\src\\vue-components\\bonsai.vue"
+Component.options.__file = "D:\\WINDOWS\\GD2\\web\\testfiles\\webpack2\\_node_dev\\tf_vuejs_spa3\\src\\vue-components\\bonsai.vue"
 if (Component.esModule && Object.keys(Component.esModule).some(function (key) {return key !== "default" && key !== "__esModule"})) {console.error("named exports are not supported in *.vue files.")}
 if (Component.options.functional) {console.error("[vue-loader] bonsai.vue: functional components are not supported with templates, they should use render functions.")}
 
@@ -462,7 +462,7 @@ var Component = __webpack_require__(0)(
   /* cssModules */
   null
 )
-Component.options.__file = "D:\\WINDOWS\\GD2\\web\\testfiles\\webpack2\\_node_dev\\git_vuejs_spa3\\src\\vue-components\\footer.vue"
+Component.options.__file = "D:\\WINDOWS\\GD2\\web\\testfiles\\webpack2\\_node_dev\\tf_vuejs_spa3\\src\\vue-components\\footer.vue"
 if (Component.esModule && Object.keys(Component.esModule).some(function (key) {return key !== "default" && key !== "__esModule"})) {console.error("named exports are not supported in *.vue files.")}
 if (Component.options.functional) {console.error("[vue-loader] footer.vue: functional components are not supported with templates, they should use render functions.")}
 
@@ -496,7 +496,7 @@ var Component = __webpack_require__(0)(
   /* cssModules */
   null
 )
-Component.options.__file = "D:\\WINDOWS\\GD2\\web\\testfiles\\webpack2\\_node_dev\\git_vuejs_spa3\\src\\vue-components\\global404.vue"
+Component.options.__file = "D:\\WINDOWS\\GD2\\web\\testfiles\\webpack2\\_node_dev\\tf_vuejs_spa3\\src\\vue-components\\global404.vue"
 if (Component.esModule && Object.keys(Component.esModule).some(function (key) {return key !== "default" && key !== "__esModule"})) {console.error("named exports are not supported in *.vue files.")}
 if (Component.options.functional) {console.error("[vue-loader] global404.vue: functional components are not supported with templates, they should use render functions.")}
 
@@ -530,7 +530,7 @@ var Component = __webpack_require__(0)(
   /* cssModules */
   null
 )
-Component.options.__file = "D:\\WINDOWS\\GD2\\web\\testfiles\\webpack2\\_node_dev\\git_vuejs_spa3\\src\\vue-components\\header.vue"
+Component.options.__file = "D:\\WINDOWS\\GD2\\web\\testfiles\\webpack2\\_node_dev\\tf_vuejs_spa3\\src\\vue-components\\header.vue"
 if (Component.esModule && Object.keys(Component.esModule).some(function (key) {return key !== "default" && key !== "__esModule"})) {console.error("named exports are not supported in *.vue files.")}
 if (Component.options.functional) {console.error("[vue-loader] header.vue: functional components are not supported with templates, they should use render functions.")}
 
@@ -564,7 +564,7 @@ var Component = __webpack_require__(0)(
   /* cssModules */
   null
 )
-Component.options.__file = "D:\\WINDOWS\\GD2\\web\\testfiles\\webpack2\\_node_dev\\git_vuejs_spa3\\src\\vue-components\\home.vue"
+Component.options.__file = "D:\\WINDOWS\\GD2\\web\\testfiles\\webpack2\\_node_dev\\tf_vuejs_spa3\\src\\vue-components\\home.vue"
 if (Component.esModule && Object.keys(Component.esModule).some(function (key) {return key !== "default" && key !== "__esModule"})) {console.error("named exports are not supported in *.vue files.")}
 if (Component.options.functional) {console.error("[vue-loader] home.vue: functional components are not supported with templates, they should use render functions.")}
 
@@ -590,7 +590,7 @@ module.exports = Component.exports
 
 var Component = __webpack_require__(0)(
   /* script */
-  __webpack_require__(19),
+  __webpack_require__(16),
   /* template */
   __webpack_require__(21),
   /* scopeId */
@@ -598,7 +598,7 @@ var Component = __webpack_require__(0)(
   /* cssModules */
   null
 )
-Component.options.__file = "D:\\WINDOWS\\GD2\\web\\testfiles\\webpack2\\_node_dev\\git_vuejs_spa3\\src\\vue-components\\links.vue"
+Component.options.__file = "D:\\WINDOWS\\GD2\\web\\testfiles\\webpack2\\_node_dev\\tf_vuejs_spa3\\src\\vue-components\\links.vue"
 if (Component.esModule && Object.keys(Component.esModule).some(function (key) {return key !== "default" && key !== "__esModule"})) {console.error("named exports are not supported in *.vue files.")}
 if (Component.options.functional) {console.error("[vue-loader] links.vue: functional components are not supported with templates, they should use render functions.")}
 
@@ -632,7 +632,7 @@ var Component = __webpack_require__(0)(
   /* cssModules */
   null
 )
-Component.options.__file = "D:\\WINDOWS\\GD2\\web\\testfiles\\webpack2\\_node_dev\\git_vuejs_spa3\\src\\vue-components\\subroute404.vue"
+Component.options.__file = "D:\\WINDOWS\\GD2\\web\\testfiles\\webpack2\\_node_dev\\tf_vuejs_spa3\\src\\vue-components\\subroute404.vue"
 if (Component.esModule && Object.keys(Component.esModule).some(function (key) {return key !== "default" && key !== "__esModule"})) {console.error("named exports are not supported in *.vue files.")}
 if (Component.options.functional) {console.error("[vue-loader] subroute404.vue: functional components are not supported with templates, they should use render functions.")}
 
@@ -9678,6 +9678,112 @@ module.exports = g;
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
+Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__js_mediator_js__ = __webpack_require__(18);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__js_store_js__ = __webpack_require__(2);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__index_js__ = __webpack_require__(3);
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+
+
+
+
+
+/* harmony default export */ __webpack_exports__["default"] = {
+  data: function data() {
+    return {
+      items: __WEBPACK_IMPORTED_MODULE_1__js_store_js__["a" /* store */].state
+    };
+  },
+
+  computed: {
+    gr: function gr() {
+      this.items = __WEBPACK_IMPORTED_MODULE_1__js_store_js__["a" /* store */].state;
+    }
+  },
+  beforeCreate: function beforeCreate() {
+    // todo: insert loading v-if
+  },
+  created: function created() {
+    console.log("created");
+    this.loadCheck();
+  },
+  updated: function updated() {
+    console.log("updated");
+    this.loadCheck();
+  },
+  methods: {
+    loadCheck: function loadCheck() {
+      if (!this.$route.params.species) {
+        console.log("no species: " + !this.$route.params.species + " load all");
+
+        // load all
+        __WEBPACK_IMPORTED_MODULE_0__js_mediator_js__["a" /* mediator */].publish("loadAll");
+      } else if (!this.$route.params.id) {
+        console.log("no id. just load species");
+      } else {
+        console.log("load species then id");
+      }
+    }, // end loadcheck 
+    customUrl: function customUrl() {
+      __WEBPACK_IMPORTED_MODULE_2__index_js__["router"].push('/bonsai/:87956876/:ofgfjgfgh');
+    }
+  }
+};
+
+/***/ }),
+/* 16 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+
+/* harmony default export */ __webpack_exports__["default"] = {
+  data: function data() {
+    return {
+      species: 'species2',
+      id: 'id2'
+    };
+  },
+
+  computed: {
+    gr: function gr() {
+      // return this.$route
+    }
+  }
+};
+
+/***/ }),
+/* 17 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return jsonLoader; });
 var jsonLoader = {
   start: function start(url) {
@@ -9708,23 +9814,21 @@ var jsonLoader = {
 
 
 /***/ }),
-/* 16 */
+/* 18 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__store_js__ = __webpack_require__(2);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__jsonloader_js__ = __webpack_require__(15);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__jsonloader_js__ = __webpack_require__(17);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return mediator; });
 
 
 
-var Mediator = __webpack_require__(17);
+var Mediator = __webpack_require__(19);
 var mediator = new Mediator();
 
 // store state setter
 // ======================================================/
-mediator.subscribe("store", function (arg) {});
-
 mediator.subscribe("loadAll", function () {
   var jsonUrl = "./src/js/ajax/bonsai.json";
   __WEBPACK_IMPORTED_MODULE_1__jsonloader_js__["a" /* jsonLoader */].getJSON(jsonUrl).then(function (response) {
@@ -9740,7 +9844,7 @@ mediator.subscribe("loadAll", function () {
 
 
 /***/ }),
-/* 17 */
+/* 19 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;!function (a, b) {
@@ -9821,113 +9925,6 @@ var __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;!function (a, b)
       var b = this.getChannel(a || "", !0);if (b.namespace !== a) return null;var c = Array.prototype.slice.call(arguments, 1);c.push(b), b.publish(c);
     } }, d.prototype.on = d.prototype.subscribe, d.prototype.bind = d.prototype.subscribe, d.prototype.emit = d.prototype.publish, d.prototype.trigger = d.prototype.publish, d.prototype.off = d.prototype.remove, d.Channel = c, d.Subscriber = b, d.version = "0.9.8", d;
 });
-
-/***/ }),
-/* 18 */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__js_mediator_js__ = __webpack_require__(16);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__js_store_js__ = __webpack_require__(2);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__index_js__ = __webpack_require__(3);
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-
-
-
-
-
-/* harmony default export */ __webpack_exports__["default"] = {
-  data: function data() {
-    return {
-      items: __WEBPACK_IMPORTED_MODULE_1__js_store_js__["a" /* store */].state
-    };
-  },
-
-  computed: {
-    gr: function gr() {
-      this.items = __WEBPACK_IMPORTED_MODULE_1__js_store_js__["a" /* store */].state;
-    }
-  },
-  beforeCreate: function beforeCreate() {
-    // todo: insert loading v-if
-    console.log("beforeCreate");
-  },
-  created: function created() {
-    console.log("created");
-    this.loadCheck();
-  },
-  updated: function updated() {
-    console.log("updated");
-    this.loadCheck();
-  },
-  methods: {
-    loadCheck: function loadCheck() {
-      if (!this.$route.params.species) {
-        console.log("no species: " + !this.$route.params.species + " load all");
-
-        // load all
-        __WEBPACK_IMPORTED_MODULE_0__js_mediator_js__["a" /* mediator */].publish("loadAll");
-      } else if (!this.$route.params.id) {
-        console.log("no id. just load species");
-      } else {
-        console.log("load species then id");
-      }
-    }, // end loadcheck 
-    customUrl: function customUrl() {
-      __WEBPACK_IMPORTED_MODULE_2__index_js__["router"].push('/bonsai/:87956876/:ofgfjgfgh');
-    }
-  }
-};
-
-/***/ }),
-/* 19 */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-
-/* harmony default export */ __webpack_exports__["default"] = {
-  data: function data() {
-    return {
-      species: 'species2',
-      id: 'id2'
-    };
-  },
-
-  computed: {
-    gr: function gr() {
-      // return this.$route
-    }
-  }
-};
 
 /***/ }),
 /* 20 */

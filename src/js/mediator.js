@@ -6,10 +6,6 @@ const mediator = new Mediator();
 
 // store state setter
 // ======================================================/
-mediator.subscribe("store", function (arg) {
-
-});
-
 mediator.subscribe("loadAll", function () {
   const jsonUrl = "./src/js/ajax/bonsai.json";
   jsonLoader.getJSON(jsonUrl).then(function (response) {
