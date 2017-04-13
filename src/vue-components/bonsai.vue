@@ -44,7 +44,7 @@ export default {
           // console.log("no species: " + !this.$route.params.species + " load all");
 
           // load all
-          // mediator.publish("loadAll");
+          mediator.publish("loadAll");
           
         } else if (!this.$route.params.id) {
           // console.log("no id. just load species");
