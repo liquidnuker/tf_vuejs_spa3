@@ -32,7 +32,7 @@ export default {
     },
     created: function () {
       console.log("created");
-      this.loadCheck();
+      this.items = store.state;
     },
     updated: function () {
       console.log("updated");
@@ -41,15 +41,15 @@ export default {
     methods: {
       loadCheck: function () {
         if (!this.$route.params.species) {
-          console.log("no species: " + !this.$route.params.species + " load all");
+          // console.log("no species: " + !this.$route.params.species + " load all");
 
           // load all
-          mediator.publish("loadAll");
+          // mediator.publish("loadAll");
           
         } else if (!this.$route.params.id) {
-          console.log("no id. just load species");
+          // console.log("no id. just load species");
         } else {
-          console.log("load species then id");
+          // console.log("load species then id");
         }
       }, // end loadcheck 
       customUrl: function () {

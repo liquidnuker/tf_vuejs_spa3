@@ -15,6 +15,7 @@ mediator.subscribe("loadAll", function () {
   }).then(function () {
     // showPages();
     // console.log(store.state);
+    document.getElementById("vc-page-bonsai").innerHTML = JSON.stringify(store.state);
   });
 });
 
