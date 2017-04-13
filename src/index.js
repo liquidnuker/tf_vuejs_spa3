@@ -12,7 +12,7 @@ import vcPageBonsai from "./vue-components/bonsai.vue";
 import global404 from "./vue-components/global404.vue";
 import subroute404 from "./vue-components/subroute404.vue";
 
-import {mediator} from "./js/mediator.js";
+// import {mediator} from "./js/mediator.js";
 
 // 
 // ======================================================/
@@ -59,4 +59,6 @@ new Vue({
 
 export {router};
 
-mediator.publish("loadAll");
+// mediator.publish("loadAll");
+
+

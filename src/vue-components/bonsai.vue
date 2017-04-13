@@ -12,9 +12,9 @@
 </template>
 
 <script>
-import {mediator} from "../js/mediator.js";
 import {store} from "../js/store.js";
 import {router} from "../index.js";
+import {mediator} from "../js/mediator.js";
 
 export default {
   data() {
@@ -32,7 +32,8 @@ export default {
     },
     created: function () {
       console.log("created");
-      this.items = store.state;
+      // this.items = store.state;
+      this.loadCheck();
     },
     updated: function () {
       console.log("updated");
@@ -44,7 +45,21 @@ export default {
           // console.log("no species: " + !this.$route.params.species + " load all");
 
           // load all
-          mediator.publish("loadAll");
+          return new Promise(function (resolve, reject) {
+  
+const itemstore = mediator.publish("loadAll");
+  resolve(itemstore);
+  // reject(Error("error"));
+
+}).then(function (resolved) {
+  // success
+  console.log("resolved");
+  
+
+}, function (err) {
+  console.log(err); // error
+});
+          
           
         } else if (!this.$route.params.id) {
           // console.log("no id. just load species");
