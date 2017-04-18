@@ -23,7 +23,7 @@ export default {
       }
     },
     computed: {
-      gr: function() {
+      gr: function () {
         this.items = store.state;
       }
     },
@@ -39,6 +39,9 @@ export default {
       console.log("updated");
       this.loadCheck();
     },
+    mounted: function () {
+      console.log("mounted");
+    },
     methods: {
       loadCheck: function () {
         if (!this.$route.params.species) {
@@ -46,21 +49,21 @@ export default {
 
           // load all
           return new Promise(function (resolve, reject) {
-  
-const itemstore = mediator.publish("loadAll");
-  resolve(itemstore);
-  // reject(Error("error"));
 
-}).then(function (resolved) {
-  // success
-  console.log("resolved");
-  
+            const itemstore = mediator.publish("loadAll");
+            resolve(itemstore);
+            // reject(Error("error"));
 
-}, function (err) {
-  console.log(err); // error
-});
-          
-          
+          }).then(function (resolved) {
+            // success
+            console.log("resolved");
+
+
+          }, function (err) {
+            console.log(err); // error
+          });
+
+
         } else if (!this.$route.params.id) {
           // console.log("no id. just load species");
         } else {
