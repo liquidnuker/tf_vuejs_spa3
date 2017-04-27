@@ -22,22 +22,30 @@ export default {
       items: store.state
     }
   },
-  beforeCreate: function () {
-    console.log("beforeCreate");
-  },
   created: function () {
-    console.log("created");
-    // this.items = store.state;
-    this.loadCheck();
+    console.log(store.state);
+    // load ajax
+    this.changeState();
   },
   updated: function () {
     console.log("updated");
   },
   mounted: function () {
     console.log("mounted");
+    this.refreshState();
   },
   methods: {
+    changeState: function() {
+      store.state = "changed state"
+      console.log(store.state);
+    },
+    refreshState: function() {
+      // refresh state. triggers updated hook
+      this.items = store.state;
+    },
     loadCheck: function () {
+      // this.method1 = this.method1.bind(this); react-style binder
+      
       if (!this.$route.params.species) {
         console.log("no species: " + !this.$route.params.species + " load all");
         // load all
