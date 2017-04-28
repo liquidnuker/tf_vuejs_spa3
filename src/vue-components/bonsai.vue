@@ -14,7 +14,7 @@
 <script>
 import {store} from "../js/store.js";
 import {router} from "../index.js";
-import {jsonLoader} from "./js/jsonloader.js";
+import {jsonLoader} from "../js/jsonloader.js";
 
 export default {
   data() {
@@ -24,9 +24,9 @@ export default {
   },
   created: function () {
     console.log(store.state);
-    console.log("created");
+    console.log("created-loadItems");
     // load ajax
-    this.changeState();
+    this.loadItems();
   },
   beforeUpdate: function() {
     console.log("beforeUpdate");
@@ -47,6 +47,16 @@ export default {
       // refresh state. 
       // triggers beforeUpdate, updated hook
       this.items = store.state;
+    },
+    loadItems: function() {
+      const jsonUrl = "./src/js/ajax/bonsai.json";
+      jsonLoader.getJSON(jsonUrl).then(function (response) {
+        store.state = response.bonsai;
+        console.log(store.state.length);
+        }).then(function () {
+        // showPages();
+        
+      });
     },
     loadCheck: function () {
       // this.method1 = this.method1.bind(this); react-style binder
