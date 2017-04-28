@@ -55,13 +55,12 @@ export default {
         store.state = response.bonsai;
         console.log(store.state.length);
         }).then(function () {
-        // showPages();
         self.refreshState();
+      }).then(function () {
+        console.log("paginator");
       });
     },
     loadCheck: function () {
-      // this.method1 = this.method1.bind(this); react-style binder
-      
       if (!this.$route.params.species) {
         console.log("no species: " + !this.$route.params.species + " load all");
         // load all
