@@ -9957,7 +9957,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 
   created: function created() {
     console.log(__WEBPACK_IMPORTED_MODULE_0__js_store_js__["a" /* store */].state);
-    console.log("created-loadItems");
+    // console.log("created-loadItems");
     // load ajax
     // this.loadItems();
 
@@ -9965,6 +9965,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
   },
   beforeUpdate: function beforeUpdate() {
     console.log("beforeUpdate");
+    this.loadCheck();
   },
   updated: function updated() {
     console.log("updated");
@@ -9998,11 +9999,6 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
     loadCheck: function loadCheck() {
       if (!this.$route.params.species) {
         console.log("no species: " + !this.$route.params.species + " load all");
-
-        // check if state is empty
-        if (this.items === '') {
-          console.log("empty");
-        }
       } else if (!this.$route.params.id) {
         console.log("no id. just load species");
       } else {
