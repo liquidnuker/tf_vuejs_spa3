@@ -9959,7 +9959,9 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
     console.log(__WEBPACK_IMPORTED_MODULE_0__js_store_js__["a" /* store */].state);
     console.log("created-loadItems");
     // load ajax
-    this.loadItems();
+    // this.loadItems();
+
+    this.loadCheck();
   },
   beforeUpdate: function beforeUpdate() {
     console.log("beforeUpdate");
@@ -9996,7 +9998,11 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
     loadCheck: function loadCheck() {
       if (!this.$route.params.species) {
         console.log("no species: " + !this.$route.params.species + " load all");
-        // load all
+
+        // check if state is empty
+        if (this.items === '') {
+          console.log("empty");
+        }
       } else if (!this.$route.params.id) {
         console.log("no id. just load species");
       } else {
@@ -10087,7 +10093,7 @@ var jsonLoader = {
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return store; });
 var store = {
-  state: 'zzzz',
+  state: '',
   category: ''
 };
 

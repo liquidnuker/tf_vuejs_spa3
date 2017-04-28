@@ -30,7 +30,9 @@ export default {
     console.log(store.state);
     console.log("created-loadItems");
     // load ajax
-    this.loadItems();
+    // this.loadItems();
+
+    this.loadCheck();
   },
   beforeUpdate: function() {
     console.log("beforeUpdate");
@@ -67,7 +69,12 @@ export default {
     loadCheck: function () {
       if (!this.$route.params.species) {
         console.log("no species: " + !this.$route.params.species + " load all");
-        // load all
+        
+        // check if state is empty
+        if (this.items === '') {
+          console.log("empty");
+        }
+      
       } else if (!this.$route.params.id) {
         console.log("no id. just load species");
       } else {

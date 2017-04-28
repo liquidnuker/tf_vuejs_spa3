@@ -1,5 +1,5 @@
 const store = {
-  state: 'zzzz',
+  state: '',
   category: ''
 };
 
