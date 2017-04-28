@@ -9999,6 +9999,13 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
     loadCheck: function loadCheck() {
       if (!this.$route.params.species) {
         console.log("no species: " + !this.$route.params.species + " load all");
+
+        // check if empty
+        if (this.items === '') {
+          console.log("empty");
+        } else {
+          return;
+        }
       } else if (!this.$route.params.id) {
         console.log("no id. just load species");
       } else {
