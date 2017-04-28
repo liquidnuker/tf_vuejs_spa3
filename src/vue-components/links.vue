@@ -6,10 +6,7 @@
     <router-link to="/bonsai">bonsai</router-link>
     <router-link v-bind:to="'/bonsai/:' + species">{{ species }}</router-link>
     <!-- <router-link v-bind:to="'/bonsai/:' + species + '/:' + id">{{ speciesId }}</router-link> -->
-
     <router-link v-bind:to="'/bonsai/:' + species + '/:'+  id">speciesid</router-link>
-
-
   </div>
   <router-view class="router-view"></router-view>
 </div>
@@ -23,9 +20,6 @@ export default {
     }
   },
   computed: {
-    gr: function () {
-    // return this.$route
-    }
   }
 }
 </script>
