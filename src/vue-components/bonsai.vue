@@ -16,78 +16,108 @@
 </template>
 
 <script>
-import {store} from "../js/store.js";
-import {router} from "../index.js";
-import {jsonLoader} from "../js/jsonloader.js";
+import {
+  store
+}
+from "../js/store.js";
+import {
+  router
+}
+from "../index.js";
+import {
+  jsonLoader
+}
+from "../js/jsonloader.js";
 
 export default {
   data() {
-    return {
-      items: store.state
-    }
-  },
-  created: function () {
-    console.log(store.state);
-    // console.log("created-loadItems");
-    // load ajax
-    // this.loadItems();
-
-    this.loadCheck();
-  },
-  beforeUpdate: function() {
-    console.log("beforeUpdate");
-    this.loadCheck();
-  },
-  updated: function () {
-    console.log("updated");
-  },
-  mounted: function () {
-    console.log("mounted");
-    // this.refreshState();
-  },
-  methods: {
-    changeState: function() {
-      store.state = "new state"
-      console.log(store.state);
-    },
-    refreshState: function() {
-      // refresh state. 
-      // triggers beforeUpdate, updated hook
-      this.items = store.state;
-    },
-    loadItems: function() {
-      let self = this;
-      const jsonUrl = "./src/js/ajax/bonsai.json";
-      jsonLoader.getJSON(jsonUrl).then(function (response) {
-        store.state = response.bonsai;
-        console.log(store.state.length);
-        }).then(function () {
-        self.refreshState();
-      }).then(function () {
-        console.log("paginator");
-      });
-    },
-    loadCheck: function () {
-      if (!this.$route.params.species) {
-        console.log("no species: " + !this.$route.params.species + " load all");
-
-        // check if empty
-        if (this.items === '') {
-          console.log("empty");
-        } else {
-          return
-        }
-
-
-      } else if (!this.$route.params.id) {
-        console.log("no id. just load species");
-      } else {
-        console.log("load species then id");
+      return {
+        items: store.state
       }
-    }, // end loadcheck 
-    customUrl: function () {
-      router.push('/bonsai/:87956876/:ofgfjgfgh')
+    },
+    created: function () {
+      console.log(store.state);
+      // console.log("created-loadAll");
+      // load ajax
+      // this.loadAll();
+
+      this.loadCheck();
+    },
+    beforeUpdate: function () {
+      console.log("beforeUpdate");
+      this.loadCheck();
+    },
+    updated: function () {
+      console.log("updated");
+    },
+    mounted: function () {
+      console.log("mounted");
+      // this.refreshState();
+    },
+    methods: {
+      changeState: function () {
+        store.state = "new state"
+        console.log(store.state);
+      },
+      refreshState: function () {
+        // refresh state. 
+        // triggers beforeUpdate, updated hook
+        this.items = store.state;
+      },
+      loadAll: function () {
+        let self = this;
+        const jsonUrl = "./src/js/ajax/bonsai.json";
+        jsonLoader.getJSON(jsonUrl).then(function (response) {
+          store.state = response.bonsai;
+          console.log(store.state.length);
+        }).then(function () {
+          self.refreshState();
+        });
+        return jsonLoader;
+      },
+      loadCheck: function () {
+        if (!this.$route.params.species) {
+          console.log("no species: " + !this.$route.params.species + " load all");
+
+          // check if empty state
+          if (this.items === '') {
+            console.log("empty");
+
+            let self = this;
+            return new Promise(function (resolve, reject) {
+              // $("#paginator").jPages("destroy");
+              const allItems = self.loadAll();
+              resolve(allItems);
+              reject(Error("error"));
+            }).then(function (resolved) {
+              // success
+              console.log("paginator-all");
+            }, function (err) {
+              console.log(err); // error
+            });
+          } else {
+            return
+          }
+
+
+        } else if (!this.$route.params.id) {
+          console.log("no id. just load species");
+
+          // check if empty state
+          if (this.items === '') {
+            console.log("empty");
+
+          } else {
+            return
+          }
+
+        } else {
+          console.log("load species then id");
+        }
+      }, // end loadcheck 
+      customUrl: function () {
+        router.push('/bonsai/:87956876/:ofgfjgfgh')
+      }
     }
-  }
 }
 </script>
