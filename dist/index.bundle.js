@@ -9964,29 +9964,35 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
     };
   },
 
-  beforeCreate: function beforeCreate() {},
   created: function created() {
     console.log(__WEBPACK_IMPORTED_MODULE_0__js_store_js__["a" /* store */].state);
+    console.log("created");
     // load ajax
     this.changeState();
+  },
+  beforeUpdate: function beforeUpdate() {
+    console.log("beforeUpdate");
   },
   updated: function updated() {
     console.log("updated");
   },
   mounted: function mounted() {
     console.log("mounted");
-    this.refreshState();
+    // this.refreshState();
   },
   methods: {
     changeState: function changeState() {
-      __WEBPACK_IMPORTED_MODULE_0__js_store_js__["a" /* store */].state = "changed state";
+      __WEBPACK_IMPORTED_MODULE_0__js_store_js__["a" /* store */].state = "new state";
       console.log(__WEBPACK_IMPORTED_MODULE_0__js_store_js__["a" /* store */].state);
     },
     refreshState: function refreshState() {
-      // refresh state. triggers updated hook
+      // refresh state. 
+      // triggers beforeUpdate, updated hook
       this.items = __WEBPACK_IMPORTED_MODULE_0__js_store_js__["a" /* store */].state;
     },
     loadCheck: function loadCheck() {
+      // this.method1 = this.method1.bind(this); react-style binder
+
       if (!this.$route.params.species) {
         console.log("no species: " + !this.$route.params.species + " load all");
         // load all

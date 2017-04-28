@@ -24,23 +24,28 @@ export default {
   },
   created: function () {
     console.log(store.state);
+    console.log("created");
     // load ajax
     this.changeState();
+  },
+  beforeUpdate: function() {
+    console.log("beforeUpdate");
   },
   updated: function () {
     console.log("updated");
   },
   mounted: function () {
     console.log("mounted");
-    this.refreshState();
+    // this.refreshState();
   },
   methods: {
     changeState: function() {
-      store.state = "changed state"
+      store.state = "new state"
       console.log(store.state);
     },
     refreshState: function() {
-      // refresh state. triggers updated hook
+      // refresh state. 
+      // triggers beforeUpdate, updated hook
       this.items = store.state;
     },
     loadCheck: function () {
