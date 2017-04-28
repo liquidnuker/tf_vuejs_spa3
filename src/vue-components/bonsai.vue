@@ -16,18 +16,9 @@
 </template>
 
 <script>
-import {
-  store
-}
-from "../js/store.js";
-import {
-  router
-}
-from "../index.js";
-import {
-  jsonLoader
-}
-from "../js/jsonloader.js";
+import {store} from "../js/store.js";
+import {router} from "../index.js";
+import {jsonLoader} from "../js/jsonloader.js";
 
 export default {
   data() {
@@ -37,10 +28,6 @@ export default {
     },
     created: function () {
       console.log(store.state);
-      // console.log("created-loadAll");
-      // load ajax
-      // this.loadAll();
-
       this.loadCheck();
     },
     beforeUpdate: function () {
@@ -52,7 +39,6 @@ export default {
     },
     mounted: function () {
       console.log("mounted");
-      // this.refreshState();
     },
     methods: {
       changeState: function () {
@@ -60,7 +46,6 @@ export default {
         console.log(store.state);
       },
       refreshState: function () {
-        // refresh state. 
         // triggers beforeUpdate, updated hook
         this.items = store.state;
       },
