@@ -49,13 +49,14 @@ export default {
       this.items = store.state;
     },
     loadItems: function() {
+      let self = this;
       const jsonUrl = "./src/js/ajax/bonsai.json";
       jsonLoader.getJSON(jsonUrl).then(function (response) {
         store.state = response.bonsai;
         console.log(store.state.length);
         }).then(function () {
         // showPages();
-        
+        self.refreshState();
       });
     },
     loadCheck: function () {

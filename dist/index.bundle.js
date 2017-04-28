@@ -9978,13 +9978,14 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
       this.items = __WEBPACK_IMPORTED_MODULE_0__js_store_js__["a" /* store */].state;
     },
     loadItems: function loadItems() {
+      var self = this;
       var jsonUrl = "./src/js/ajax/bonsai.json";
       __WEBPACK_IMPORTED_MODULE_2__js_jsonloader_js__["a" /* jsonLoader */].getJSON(jsonUrl).then(function (response) {
         __WEBPACK_IMPORTED_MODULE_0__js_store_js__["a" /* store */].state = response.bonsai;
         console.log(__WEBPACK_IMPORTED_MODULE_0__js_store_js__["a" /* store */].state.length);
       }).then(function () {
         // showPages();
-
+        self.refreshState();
       });
     },
     loadCheck: function loadCheck() {
