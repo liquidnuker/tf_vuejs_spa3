@@ -14,7 +14,7 @@
 <script>
 import {store} from "../js/store.js";
 import {router} from "../index.js";
-import {mediator} from "../js/mediator.js";
+import {jsonLoader} from "./js/jsonloader.js";
 
 export default {
   data() {
