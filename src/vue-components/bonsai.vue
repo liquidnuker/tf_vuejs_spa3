@@ -81,9 +81,8 @@ export default {
               console.log(err); // error
             });
           } else {
-            return
+            return;
           }
-
 
         } else if (!this.$route.params.id) {
           console.log("no id. just load species");
@@ -91,9 +90,24 @@ export default {
           // check if empty state
           if (this.items === '') {
             console.log("empty");
+            // load items before filtering
+            let self = this;
+            return new Promise(function (resolve, reject) {
+              // $("#paginator").jPages("destroy");
+              const allItems = self.loadAll();
+              resolve(allItems);
+              reject(Error("error"));
+            }).then(function (resolved) {
+              // items loaded. proceed to filter
+              console.log("ready to filter");
+            }).then(function() {
+              console.log("paginator-species");
+            }), function (err) {
+              console.log(err); // error
+            };
 
           } else {
-            return
+            return;
           }
 
         } else {
