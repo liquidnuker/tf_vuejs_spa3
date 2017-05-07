@@ -41,7 +41,9 @@ export default {
       console.log("mounted");
     },
     methods: {
-      
+      customUrl: function () {
+        router.push('/bonsai/:87956876/:ofgfjgfgh')
+      }      
     }
 }
 </script>
