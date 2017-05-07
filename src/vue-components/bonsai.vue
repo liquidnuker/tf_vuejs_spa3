@@ -28,11 +28,11 @@ export default {
     },
     created: function () {
       console.log(store.state);
-      this.loadCheck();
+      // load json
     },
     beforeUpdate: function () {
       console.log("beforeUpdate");
-      this.loadCheck();
+      // this.loadCheck();
     },
     updated: function () {
       console.log("updated");
@@ -41,82 +41,7 @@ export default {
       console.log("mounted");
     },
     methods: {
-      changeState: function () {
-        store.state = "new state"
-        console.log(store.state);
-      },
-      refreshState: function () {
-        // triggers beforeUpdate, updated hook
-        this.items = store.state;
-      },
-      loadAll: function () {
-        let self = this;
-        const jsonUrl = "./src/js/ajax/bonsai.json";
-        jsonLoader.getJSON(jsonUrl).then(function (response) {
-          store.state = response.bonsai;
-          console.log(store.state.length);
-        }).then(function () {
-          self.refreshState();
-        });
-        return jsonLoader;
-      },
-      loadCheck: function () {
-        if (!this.$route.params.species) {
-          console.log("no species: " + !this.$route.params.species + " load all");
-
-          // check if empty state
-          if (this.items === '') {
-            console.log("empty");
-
-            let self = this;
-            return new Promise(function (resolve, reject) {
-              // $("#paginator").jPages("destroy");
-              const allItems = self.loadAll();
-              resolve(allItems);
-              reject(Error("error"));
-            }).then(function (resolved) {
-              // success
-              console.log("paginator-all");
-            }, function (err) {
-              console.log(err); // error
-            });
-          } else {
-            return;
-          }
-
-        } else if (!this.$route.params.id) {
-          console.log("no id. just load species");
-
-          // check if empty state
-          if (this.items === '') {
-            console.log("empty");
-            // load items before filtering
-            let self = this;
-            return new Promise(function (resolve, reject) {
-              // $("#paginator").jPages("destroy");
-              const allItems = self.loadAll();
-              resolve(allItems);
-              reject(Error("error"));
-            }).then(function (resolved) {
-              // items loaded. proceed to filter
-              console.log("ready to filter");
-            }).then(function() {
-              console.log("paginator-species");
-            }), function (err) {
-              console.log(err); // error
-            };
-
-          } else {
-            return;
-          }
-
-        } else {
-          console.log("load species then id");
-        }
-      }, // end loadcheck 
-      customUrl: function () {
-        router.push('/bonsai/:87956876/:ofgfjgfgh')
-      }
+      
     }
 }
 </script>
