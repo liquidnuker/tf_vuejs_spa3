@@ -71,10 +71,8 @@ export default {
         // choose which items to display based on param
         if (!this.$route.params.species) {
           this.showAll();
-        } else if (!this.$route.params.id) {
-          this.showSpecies();
         } else {
-          this.showId();
+          this.showSpecies();
         }
       },
       showAll: function() {
@@ -88,9 +86,15 @@ export default {
       },
       showSpecies: function() {
         let self = this;
-        jsonFilter.filter("Jukan").then(function() {
-          self.refreshItems();
+        const filterSpecies = jsonFilter.filter("Jukan").then(function() {
+          
+          // check if id exists
+          if (self.$route.params.id === undefined) {
+            console.log("no id. proceed to load species");
+            self.refreshItems();
+          }
         });
+        return filterSpecies;
         console.log("showspecies");
         
       },
