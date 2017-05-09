@@ -2,7 +2,7 @@
   <div id="vc-page-bonsai" class="vc-page-bonsai">
     <p>vc-page-bonsai</p>
     <div id="galleryContainer">
-      <div v-for="i in items">
+      <div v-for="i in currentItem">
         <div class="col-sm-12 col-sm-4">
           {{ i.id }} <br>
           {{ i.thumb }} <br>
@@ -24,7 +24,7 @@ import {jsonFilter} from "../js/jsonFilter.js";
 export default {
   data() {
       return {
-        items: store.state
+        currentItem: store.currentItem
       }
     },
     created: function () {
@@ -51,18 +51,23 @@ export default {
     },
     methods: {
       refreshItems: function() {
-        this.items = store.state;
+        this.currentItem = store.currentItem;
       },
       loadItems: function() {
         const jsonUrl = "./src/js/ajax/bonsai.json";
         // check if empty
         let self = this;
-        if (store.state === '') {
+        if (store.allItems === '') {
           jsonLoader.getJSON(jsonUrl).then(function (response) {
-          store.state = response.bonsai;
+
+          // inject to all items  
+          store.allItems = response.bonsai;
           self.refreshItems();
-          console.log(store.state.length);
+          console.log(store.allItems.length);
           }).then(function () {
+            // set currentItem to allItems
+            store.currentItem = store.allItems;
+          }).then(function() {
             self.paramCheck();
           });
         }
@@ -77,7 +82,7 @@ export default {
       },
       showAll: function() {
         // check if empty
-        if (store.state === '') {
+        if (store.allItems === '') {
           this.loadItems();
         } else {
           console.log("showall");

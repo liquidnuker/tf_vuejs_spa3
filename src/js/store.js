@@ -1,6 +1,8 @@
 const store = {
-  state: '',
-  category: ''
+  allItems: '',
+  filteredItems: '',
+  filteredId: '',
+  currentItem: ''
 };
 
 export {store}

@@ -7176,8 +7176,10 @@ process.umask = function() { return 0; };
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return store; });
 var store = {
-  state: '',
-  category: ''
+  allItems: '',
+  filteredItems: '',
+  filteredId: '',
+  currentItem: ''
 };
 
 
@@ -10077,7 +10079,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony default export */ __webpack_exports__["default"] = {
   data: function data() {
     return {
-      items: __WEBPACK_IMPORTED_MODULE_0__js_store_js__["a" /* store */].state
+      currentItem: __WEBPACK_IMPORTED_MODULE_0__js_store_js__["a" /* store */].currentItem
     };
   },
 
@@ -10104,17 +10106,22 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
   },
   methods: {
     refreshItems: function refreshItems() {
-      this.items = __WEBPACK_IMPORTED_MODULE_0__js_store_js__["a" /* store */].state;
+      this.currentItem = __WEBPACK_IMPORTED_MODULE_0__js_store_js__["a" /* store */].currentItem;
     },
     loadItems: function loadItems() {
       var jsonUrl = "./src/js/ajax/bonsai.json";
       // check if empty
       var self = this;
-      if (__WEBPACK_IMPORTED_MODULE_0__js_store_js__["a" /* store */].state === '') {
+      if (__WEBPACK_IMPORTED_MODULE_0__js_store_js__["a" /* store */].allItems === '') {
         __WEBPACK_IMPORTED_MODULE_2__js_jsonloader_js__["a" /* jsonLoader */].getJSON(jsonUrl).then(function (response) {
-          __WEBPACK_IMPORTED_MODULE_0__js_store_js__["a" /* store */].state = response.bonsai;
+
+          // inject to all items  
+          __WEBPACK_IMPORTED_MODULE_0__js_store_js__["a" /* store */].allItems = response.bonsai;
           self.refreshItems();
-          console.log(__WEBPACK_IMPORTED_MODULE_0__js_store_js__["a" /* store */].state.length);
+          console.log(__WEBPACK_IMPORTED_MODULE_0__js_store_js__["a" /* store */].allItems.length);
+        }).then(function () {
+          // set currentItem to allItems
+          __WEBPACK_IMPORTED_MODULE_0__js_store_js__["a" /* store */].currentItem = __WEBPACK_IMPORTED_MODULE_0__js_store_js__["a" /* store */].allItems;
         }).then(function () {
           self.paramCheck();
         });
@@ -10130,7 +10137,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
     },
     showAll: function showAll() {
       // check if empty
-      if (__WEBPACK_IMPORTED_MODULE_0__js_store_js__["a" /* store */].state === '') {
+      if (__WEBPACK_IMPORTED_MODULE_0__js_store_js__["a" /* store */].allItems === '') {
         this.loadItems();
       } else {
         console.log("showall");
@@ -27491,7 +27498,7 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
     attrs: {
       "id": "galleryContainer"
     }
-  }, _vm._l((_vm.items), function(i) {
+  }, _vm._l((_vm.currentItem), function(i) {
     return _c('div', [_c('div', {
       staticClass: "col-sm-12 col-sm-4"
     }, [_vm._v("\n        " + _vm._s(i.id) + " "), _c('br'), _vm._v("\n        " + _vm._s(i.thumb) + " "), _c('br'), _vm._v(" "), _c('img', {
