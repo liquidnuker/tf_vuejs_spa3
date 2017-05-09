@@ -32,7 +32,7 @@ export default {
     },
     beforeUpdate: function () {
       console.log("beforeUpdate");
-      // this.loadCheck();
+      this.paramCheck();
     },
     updated: function () {
       console.log("updated");
@@ -44,12 +44,24 @@ export default {
       loadItems: function() {
         const jsonUrl = "./src/js/ajax/bonsai.json";
         // check if empty
+        let self = this;
         if (store.state === '') {
           jsonLoader.getJSON(jsonUrl).then(function (response) {
           store.state = response.bonsai;
           console.log(store.state.length);
           }).then(function () {
+            self.paramCheck();
           });
+        }
+      },
+      paramCheck: function() {
+        // choose which items to display based on param
+        if (!this.$route.params.species) {
+          console.log("no species: " + !this.$route.params.species + " show all");
+        } else if (!this.$route.params.id) {
+          console.log("no id. just show species");
+        } else {
+          console.log("show id");
         }
       },
       customUrl: function () {

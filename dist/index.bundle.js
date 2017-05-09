@@ -10044,7 +10044,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
   },
   beforeUpdate: function beforeUpdate() {
     console.log("beforeUpdate");
-    // this.loadCheck();
+    this.paramCheck();
   },
   updated: function updated() {
     console.log("updated");
@@ -10056,11 +10056,24 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
     loadItems: function loadItems() {
       var jsonUrl = "./src/js/ajax/bonsai.json";
       // check if empty
+      var self = this;
       if (__WEBPACK_IMPORTED_MODULE_0__js_store_js__["a" /* store */].state === '') {
         __WEBPACK_IMPORTED_MODULE_2__js_jsonloader_js__["a" /* jsonLoader */].getJSON(jsonUrl).then(function (response) {
           __WEBPACK_IMPORTED_MODULE_0__js_store_js__["a" /* store */].state = response.bonsai;
           console.log(__WEBPACK_IMPORTED_MODULE_0__js_store_js__["a" /* store */].state.length);
-        }).then(function () {});
+        }).then(function () {
+          self.paramCheck();
+        });
+      }
+    },
+    paramCheck: function paramCheck() {
+      // choose which items to display based on param
+      if (!this.$route.params.species) {
+        console.log("no species: " + !this.$route.params.species + " show all");
+      } else if (!this.$route.params.id) {
+        console.log("no id. just show species");
+      } else {
+        console.log("show id");
       }
     },
     customUrl: function customUrl() {
