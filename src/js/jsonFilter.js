@@ -6,7 +6,7 @@ const jsonFilter = {
     return new Promise(function (resolve, reject) {
       // $("#paginator").jPages("destroy");
 
-      store.state = filter(store.state, {
+      store.filteredItems = filter(store.allItems, {
         species: speciesToFilter
       });
 

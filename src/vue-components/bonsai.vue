@@ -98,6 +98,9 @@ export default {
           // check if id exists
           if (self.$route.params.id === undefined) {
             console.log("no id. proceed to load species");
+
+            // set currentItem to filteredItems
+            store.currentItem = store.filteredItems;
             self.refreshItems();
           }
         });

@@ -10153,6 +10153,9 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
         // check if id exists
         if (self.$route.params.id === undefined) {
           console.log("no id. proceed to load species");
+
+          // set currentItem to filteredItems
+          __WEBPACK_IMPORTED_MODULE_0__js_store_js__["a" /* store */].currentItem = __WEBPACK_IMPORTED_MODULE_0__js_store_js__["a" /* store */].filteredItems;
           self.refreshItems();
         }
       });
@@ -10216,7 +10219,7 @@ var jsonFilter = {
     return new Promise(function (resolve, reject) {
       // $("#paginator").jPages("destroy");
 
-      __WEBPACK_IMPORTED_MODULE_0__store_js__["a" /* store */].state = __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_1_lodash__["filter"])(__WEBPACK_IMPORTED_MODULE_0__store_js__["a" /* store */].state, {
+      __WEBPACK_IMPORTED_MODULE_0__store_js__["a" /* store */].filteredItems = __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_1_lodash__["filter"])(__WEBPACK_IMPORTED_MODULE_0__store_js__["a" /* store */].allItems, {
         species: speciesToFilter
       });
 
