@@ -28,7 +28,7 @@ export default {
     },
     created: function () {
       console.log(store.state);
-      // load json
+      this.loadItems();
     },
     beforeUpdate: function () {
       console.log("beforeUpdate");
@@ -41,6 +41,17 @@ export default {
       console.log("mounted");
     },
     methods: {
+      loadItems: function() {
+        const jsonUrl = "./src/js/ajax/bonsai.json";
+        // check if empty
+        if (store.state === '') {
+          jsonLoader.getJSON(jsonUrl).then(function (response) {
+          store.state = response.bonsai;
+          console.log(store.state.length);
+          }).then(function () {
+          });
+        }
+      },
       customUrl: function () {
         router.push('/bonsai/:87956876/:ofgfjgfgh')
       }      
