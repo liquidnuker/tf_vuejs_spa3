@@ -10157,6 +10157,10 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
           // set currentItem to filteredItems
           __WEBPACK_IMPORTED_MODULE_0__js_store_js__["a" /* store */].currentItem = __WEBPACK_IMPORTED_MODULE_0__js_store_js__["a" /* store */].filteredItems;
           self.refreshItems();
+        } else {
+
+          // proceed to filterId
+          self.showId();
         }
       });
       return filterSpecies;

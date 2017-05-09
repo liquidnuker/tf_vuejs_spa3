@@ -102,6 +102,10 @@ export default {
             // set currentItem to filteredItems
             store.currentItem = store.filteredItems;
             self.refreshItems();
+          } else {
+
+            // proceed to filterId
+            self.showId();
           }
         });
         return filterSpecies;
