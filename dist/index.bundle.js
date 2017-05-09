@@ -10069,12 +10069,15 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
     paramCheck: function paramCheck() {
       // choose which items to display based on param
       if (!this.$route.params.species) {
-        console.log("no species: " + !this.$route.params.species + " show all");
+        this.showAll();
       } else if (!this.$route.params.id) {
         console.log("no id. just show species");
       } else {
         console.log("show id");
       }
+    },
+    showAll: function showAll() {
+      console.log("showall");
     },
     customUrl: function customUrl() {
       __WEBPACK_IMPORTED_MODULE_1__index_js__["router"].push('/bonsai/:87956876/:ofgfjgfgh');

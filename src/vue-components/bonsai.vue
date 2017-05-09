@@ -57,12 +57,15 @@ export default {
       paramCheck: function() {
         // choose which items to display based on param
         if (!this.$route.params.species) {
-          console.log("no species: " + !this.$route.params.species + " show all");
+          this.showAll();
         } else if (!this.$route.params.id) {
           console.log("no id. just show species");
         } else {
           console.log("show id");
         }
+      },
+      showAll: function() {
+        console.log("showall");
       },
       customUrl: function () {
         router.push('/bonsai/:87956876/:ofgfjgfgh')
