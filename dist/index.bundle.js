@@ -10168,6 +10168,13 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
     },
     showId: function showId() {
       console.log("showId");
+      var self = this;
+      __WEBPACK_IMPORTED_MODULE_3__js_jsonFilter_js__["a" /* jsonFilter */].filterId("tomeru2").then(function () {
+        // set currentItem to filteredId
+        __WEBPACK_IMPORTED_MODULE_0__js_store_js__["a" /* store */].currentItem = __WEBPACK_IMPORTED_MODULE_0__js_store_js__["a" /* store */].filteredId;
+      }).then(function () {
+        self.refreshItems();
+      });
     },
     customUrl: function customUrl() {
       __WEBPACK_IMPORTED_MODULE_1__index_js__["router"].push('/bonsai/:87956876/:ofgfjgfgh');
@@ -10238,10 +10245,23 @@ var jsonFilter = {
     });
   },
   filterId: function filterId(idToFilter) {
-    __WEBPACK_IMPORTED_MODULE_0__store_js__["a" /* store */].state.filteredId = __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_1_lodash__["filter"])(__WEBPACK_IMPORTED_MODULE_0__store_js__["a" /* store */].state, {
-      id: idToFilter
+    return new Promise(function (resolve, reject) {
+      // $("#paginator").jPages("destroy");
+
+      __WEBPACK_IMPORTED_MODULE_0__store_js__["a" /* store */].filteredId = __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_1_lodash__["filter"])(__WEBPACK_IMPORTED_MODULE_0__store_js__["a" /* store */].allItems, {
+        id: idToFilter
+      });
+      console.log(__WEBPACK_IMPORTED_MODULE_0__store_js__["a" /* store */].filteredId);
+
+      resolve(__WEBPACK_IMPORTED_MODULE_0__store_js__["a" /* store */].filteredId);
+      // reject(Error("error"));
+    }).then(function (resolved) {
+      // success
+      console.log("resolved");
+      return __WEBPACK_IMPORTED_MODULE_0__store_js__["a" /* store */].filterId;
+    }, function (err) {
+      console.log(err); // error
     });
-    console.log(__WEBPACK_IMPORTED_MODULE_0__store_js__["a" /* store */].state.filteredId);
   }
 };
 

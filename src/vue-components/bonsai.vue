@@ -114,6 +114,13 @@ export default {
       },
       showId: function() {
         console.log("showId");
+        let self = this;
+        jsonFilter.filterId("tomeru2").then(function() {
+          // set currentItem to filteredId
+          store.currentItem = store.filteredId;
+        }).then(function() {
+          self.refreshItems();
+        });
       },
       customUrl: function () {
         router.push('/bonsai/:87956876/:ofgfjgfgh')

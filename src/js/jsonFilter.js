@@ -23,10 +23,26 @@ const jsonFilter = {
     });
   },
   filterId: (idToFilter) => {
-    store.state.filteredId = filter(store.state, {
+    return new Promise(function (resolve, reject) {
+      // $("#paginator").jPages("destroy");
+
+      store.filteredId = filter(store.allItems, {
       id: idToFilter
+      });
+      console.log(store.filteredId);
+
+      resolve(store.filteredId);
+      // reject(Error("error"));
+
+    }).then(function (resolved) {
+      // success
+      console.log("resolved"); 
+      return store.filterId;
+      
+    }, function (err) {
+      console.log(err); // error
     });
-    console.log(store.state.filteredId);
+  
   }
 };
 
