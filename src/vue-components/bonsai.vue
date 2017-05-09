@@ -86,6 +86,8 @@ export default {
           this.loadItems();
         } else {
           console.log("showall");
+          // set currentItem to allItems.
+          store.currentItem = store.allItems;
           this.refreshItems();
         }
       },

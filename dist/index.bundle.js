@@ -10141,6 +10141,8 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
         this.loadItems();
       } else {
         console.log("showall");
+        // set currentItem to allItems.
+        __WEBPACK_IMPORTED_MODULE_0__js_store_js__["a" /* store */].currentItem = __WEBPACK_IMPORTED_MODULE_0__js_store_js__["a" /* store */].allItems;
         this.refreshItems();
       }
     },
