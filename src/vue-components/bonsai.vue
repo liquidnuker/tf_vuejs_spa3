@@ -41,6 +41,7 @@ export default {
     },
     mounted: function () {
       console.log("mounted");
+      this.paramCheck();
     },
     watch: {
       $route: function() {
@@ -59,6 +60,7 @@ export default {
         if (store.state === '') {
           jsonLoader.getJSON(jsonUrl).then(function (response) {
           store.state = response.bonsai;
+          self.refreshItems();
           console.log(store.state.length);
           }).then(function () {
             self.paramCheck();
@@ -85,8 +87,9 @@ export default {
         }
       },
       showSpecies: function() {
+        let self = this;
         jsonFilter.filter("Jukan").then(function() {
-          
+          self.refreshItems();
         });
         console.log("showspecies");
         
