@@ -37,7 +37,7 @@ export default {
     },
     updated: function () {
       console.log("updated");
-      // this.refreshItems();
+      this.refreshItems();
     },
     mounted: function () {
       console.log("mounted");
@@ -85,10 +85,9 @@ export default {
         }
       },
       showSpecies: function() {
-        // let self = this;
-        // jsonFilter.filter("Jukan").then(function() {
-        //   self.refreshItems();
-        // });
+        jsonFilter.filter("Jukan").then(function() {
+          
+        });
         console.log("showspecies");
         
       },
