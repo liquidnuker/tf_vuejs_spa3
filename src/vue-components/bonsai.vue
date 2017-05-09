@@ -19,6 +19,7 @@
 import {store} from "../js/store.js";
 import {router} from "../index.js";
 import {jsonLoader} from "../js/jsonloader.js";
+import {jsonFilter} from "../js/jsonFilter.js";
 
 export default {
   data() {
@@ -32,10 +33,12 @@ export default {
     },
     beforeUpdate: function () {
       console.log("beforeUpdate");
-      this.paramCheck();
+      // this.paramCheck();
     },
     updated: function () {
       console.log("updated");
+      this.paramCheck();
+
     },
     mounted: function () {
       console.log("mounted");
@@ -62,9 +65,9 @@ export default {
         if (!this.$route.params.species) {
           this.showAll();
         } else if (!this.$route.params.id) {
-          console.log("no id. just show species");
+          this.showSpecies();
         } else {
-          console.log("show id");
+          this.showId();
         }
       },
       showAll: function() {
@@ -74,6 +77,16 @@ export default {
         } else {
           this.refreshItems();
         }
+      },
+      showSpecies: function() {
+        console.log("showSpecies");
+        // jsonFilter.filter("Jukan").then(function() {
+        
+        // });
+        // this.refreshItems();
+      },
+      showId: function() {
+        console.log("showId");
       },
       customUrl: function () {
         router.push('/bonsai/:87956876/:ofgfjgfgh')
