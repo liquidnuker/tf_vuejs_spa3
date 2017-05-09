@@ -10053,6 +10053,9 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
     console.log("mounted");
   },
   methods: {
+    refreshItems: function refreshItems() {
+      this.items = __WEBPACK_IMPORTED_MODULE_0__js_store_js__["a" /* store */].state;
+    },
     loadItems: function loadItems() {
       var jsonUrl = "./src/js/ajax/bonsai.json";
       // check if empty
@@ -10077,7 +10080,12 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
       }
     },
     showAll: function showAll() {
-      console.log("showall");
+      // check if empty
+      if (__WEBPACK_IMPORTED_MODULE_0__js_store_js__["a" /* store */].state === '') {
+        this.loadItems();
+      } else {
+        this.refreshItems();
+      }
     },
     customUrl: function customUrl() {
       __WEBPACK_IMPORTED_MODULE_1__index_js__["router"].push('/bonsai/:87956876/:ofgfjgfgh');
