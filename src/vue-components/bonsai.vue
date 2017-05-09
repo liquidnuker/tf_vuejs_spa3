@@ -33,15 +33,20 @@ export default {
     },
     beforeUpdate: function () {
       console.log("beforeUpdate");
-      // this.paramCheck();
+      
     },
     updated: function () {
       console.log("updated");
-      this.paramCheck();
-
+      // this.refreshItems();
     },
     mounted: function () {
       console.log("mounted");
+    },
+    watch: {
+      $route: function() {
+        console.log(this.$route.params);
+        this.paramCheck();
+      }
     },
     methods: {
       refreshItems: function() {
@@ -75,15 +80,17 @@ export default {
         if (store.state === '') {
           this.loadItems();
         } else {
+          console.log("showall");
           this.refreshItems();
         }
       },
       showSpecies: function() {
-        console.log("showSpecies");
+        // let self = this;
         // jsonFilter.filter("Jukan").then(function() {
-        
+        //   self.refreshItems();
         // });
-        // this.refreshItems();
+        console.log("showspecies");
+        
       },
       showId: function() {
         console.log("showId");

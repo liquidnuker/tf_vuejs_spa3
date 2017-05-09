@@ -10087,14 +10087,19 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
   },
   beforeUpdate: function beforeUpdate() {
     console.log("beforeUpdate");
-    // this.paramCheck();
   },
   updated: function updated() {
     console.log("updated");
-    this.paramCheck();
+    // this.refreshItems();
   },
   mounted: function mounted() {
     console.log("mounted");
+  },
+  watch: {
+    $route: function $route() {
+      console.log(this.$route.params);
+      this.paramCheck();
+    }
   },
   methods: {
     refreshItems: function refreshItems() {
@@ -10128,15 +10133,16 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
       if (__WEBPACK_IMPORTED_MODULE_0__js_store_js__["a" /* store */].state === '') {
         this.loadItems();
       } else {
+        console.log("showall");
         this.refreshItems();
       }
     },
     showSpecies: function showSpecies() {
-      console.log("showSpecies");
+      // let self = this;
       // jsonFilter.filter("Jukan").then(function() {
-
+      //   self.refreshItems();
       // });
-      // this.refreshItems();
+      console.log("showspecies");
     },
     showId: function showId() {
       console.log("showId");
