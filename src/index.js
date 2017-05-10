@@ -8,7 +8,7 @@ import vcFooter from "./vue-components/footer.vue";
 
 import vcRouterLinks from "./vue-components/links.vue";
 import vcPageHome from "./vue-components/home.vue";
-import vcPageAbout from "./vue-components/about.vue";
+// import vcPageAbout from "./vue-components/about.vue";
 import vcPageBonsai from "./vue-components/bonsai.vue";
 import global404 from "./vue-components/global404.vue";
 import subroute404 from "./vue-components/subroute404.vue";
@@ -16,6 +16,12 @@ import subroute404 from "./vue-components/subroute404.vue";
 // 
 // ======================================================/
 Vue.use(VueRouter);
+
+const vcPageAbout = resolve => {
+  require.ensure(['./vue-components/about.vue'], () => {
+    resolve(require('./vue-components/about.vue'))
+  })
+}
 
 const routes = [{
   path: "/",
