@@ -29,7 +29,6 @@ export default {
       }
     },
     created: function () {
-      console.log(store.state);
       this.loadItems();
     },
     updated: function () {
