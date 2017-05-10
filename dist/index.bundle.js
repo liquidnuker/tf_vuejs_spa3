@@ -27405,7 +27405,7 @@ var removeParamColons = function removeParamColons(routeParam) {
 
 var Component = __webpack_require__(0)(
   /* script */
-  null,
+  __webpack_require__(35),
   /* template */
   __webpack_require__(31),
   /* scopeId */
@@ -27607,10 +27607,8 @@ if (false) {
 /***/ (function(module, exports, __webpack_require__) {
 
 module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
-  return _vm._m(0)
-},staticRenderFns: [function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
-  return _c('div', [_c('p', [_vm._v("vc-about-component1")])])
-}]}
+  return _c('div', [_c('p', [_vm._v("vc-about-component1")]), _vm._v(" "), _c('p', [_vm._v(_vm._s(_vm.msg))])])
+},staticRenderFns: []}
 module.exports.render._withStripped = true
 if (false) {
   module.hot.accept()
@@ -27662,6 +27660,30 @@ if (false) {
      require("vue-hot-reload-api").rerender("data-v-bbb87cb8", module.exports)
   }
 }
+
+/***/ }),
+/* 34 */,
+/* 35 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__js_store_js__ = __webpack_require__(4);
+//
+//
+//
+//
+//
+//
+
+
+/* harmony default export */ __webpack_exports__["default"] = {
+  data: function data() {
+    return {
+      msg: __WEBPACK_IMPORTED_MODULE_0__js_store_js__["a" /* store */].currentItem
+    };
+  }
+};
 
 /***/ })
 /******/ ]);
