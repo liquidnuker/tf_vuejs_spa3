@@ -18,6 +18,7 @@
 <script>
 import {store} from "../js/store.js";
 import {router} from "../index.js";
+import {removeParamColons} from "../js/replace.js";
 import {jsonLoader} from "../js/jsonloader.js";
 import {jsonFilter} from "../js/jsonFilter.js";
 
@@ -31,21 +32,14 @@ export default {
       console.log(store.state);
       this.loadItems();
     },
-    beforeUpdate: function () {
-      console.log("beforeUpdate");
-      
-    },
     updated: function () {
-      console.log("updated");
       this.refreshItems();
     },
     mounted: function () {
-      console.log("mounted");
       this.paramCheck();
     },
     watch: {
       $route: function() {
-        console.log(this.$route.params);
         this.paramCheck();
       }
     },
@@ -85,7 +79,7 @@ export default {
         if (store.allItems === '') {
           this.loadItems();
         } else {
-          console.log("showall");
+          // show all
           // set currentItem to allItems.
           store.currentItem = store.allItems;
           this.refreshItems();
@@ -93,12 +87,12 @@ export default {
       },
       showSpecies: function() {
         let self = this;
-        const filterSpecies = jsonFilter.filter("Jukan").then(function() {
+        let speciesToFilter = removeParamColons(self.$route.params.species);
+        const filterSpecies = jsonFilter.filter(speciesToFilter).then(function() {
           
           // check if id exists
           if (self.$route.params.id === undefined) {
-            console.log("no id. proceed to load species");
-
+            
             // set currentItem to filteredItems
             store.currentItem = store.filteredItems;
             self.refreshItems();
@@ -109,13 +103,11 @@ export default {
           }
         });
         return filterSpecies;
-        console.log("showspecies");
-        
       },
       showId: function() {
-        console.log("showId");
         let self = this;
-        jsonFilter.filterId("tomeru2").then(function() {
+        let idToFilter = removeParamColons(self.$route.params.id);
+        jsonFilter.filterId(idToFilter).then(function() {
           // set currentItem to filteredId
           store.currentItem = store.filteredId;
         }).then(function() {
