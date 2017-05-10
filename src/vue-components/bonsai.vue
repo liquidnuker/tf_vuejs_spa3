@@ -114,7 +114,7 @@ export default {
         });
       },
       customUrl: function () {
-        router.push('/bonsai/:87956876/:ofgfjgfgh')
+        router.push('/bonsai/:Goyomatsu/:goyomatsu3')
       }      
     }
 }
