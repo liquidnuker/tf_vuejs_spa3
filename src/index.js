@@ -8,10 +8,6 @@ import vcFooter from "./vue-components/footer.vue";
 
 import vcRouterLinks from "./vue-components/links.vue";
 import vcPageHome from "./vue-components/home.vue";
-// import vcPageAbout from "./vue-components/about.vue";
-// import vcPageBonsai from "./vue-components/bonsai.vue";
-import global404 from "./vue-components/global404.vue";
-import subroute404 from "./vue-components/subroute404.vue";
 
 // 
 // ======================================================/
@@ -22,14 +18,16 @@ Vue.use(VueRouter);
 //     resolve(require('./vue-components/about.vue'))
 //   })
 // };
-
-const vcPageAbout = (resolve) => import("./vue-components/about.vue").then(resolve);
-
 const vcPageBonsai = resolve => {
   require.ensure(['./vue-components/bonsai.vue'], () => {
     resolve(require('./vue-components/bonsai.vue'))
   })
 };
+
+// requires npm install babel-plugin-syntax-dynamic-import --save-dev
+const vcPageAbout = (resolve) => import("./vue-components/about.vue").then(resolve);
+const global404 = (resolve) => import("./vue-components/global404.vue").then(resolve);
+const subroute404 = (resolve) => import("./vue-components/subroute404.vue").then(resolve);
 
 const routes = [{
   path: "/",
