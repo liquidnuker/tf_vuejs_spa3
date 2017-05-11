@@ -17,11 +17,13 @@ import subroute404 from "./vue-components/subroute404.vue";
 // ======================================================/
 Vue.use(VueRouter);
 
-const vcPageAbout = resolve => {
-  require.ensure(['./vue-components/about.vue'], () => {
-    resolve(require('./vue-components/about.vue'))
-  })
-};
+// const vcPageAbout = resolve => {
+//   require.ensure(['./vue-components/about.vue'], () => {
+//     resolve(require('./vue-components/about.vue'))
+//   })
+// };
+
+const vcPageAbout = (resolve) => import("./vue-components/about.vue").then(resolve);
 
 const vcPageBonsai = resolve => {
   require.ensure(['./vue-components/bonsai.vue'], () => {
