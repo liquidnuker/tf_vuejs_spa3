@@ -3,7 +3,7 @@ const webpack = require('webpack');
 var Promise = require('es6-promise').Promise;
 
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
-const extractCSS = new ExtractTextPlugin('[name].bundle.css');
+const extractCSS = new ExtractTextPlugin('../[name].bundle.css');
 
 module.exports = {
   context: path.resolve(__dirname, './src'),
